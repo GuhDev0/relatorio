@@ -1,0 +1,768 @@
+/* =========================================================
+   RELATÓRIO DE PLANTÃO - GRUPO SEPA
+   Padrão visual baseado no modelo enviado
+   ========================================================= */
+
+   * {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: #eeeeee;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+  }
+  
+  body {
+    min-width: 320px;
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+  
+  /* =========================================================
+     ÁREA PRINCIPAL DO SISTEMA
+     ========================================================= */
+  
+  .app {
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  
+  .app > h1 {
+    margin-top: 0;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #999;
+  }
+  
+  /* =========================================================
+     BOTÕES
+     ========================================================= */
+  
+  button {
+    border: 1px solid #777;
+    border-radius: 4px;
+    padding: 8px 14px;
+    background: #f5f5f5;
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background: #e6e6e6;
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* =========================================================
+     CAMPOS
+     ========================================================= */
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* =========================================================
+     FORMULÁRIOS
+     ========================================================= */
+  
+  .formulario,
+  .form-section,
+  .secao-formulario {
+    margin-bottom: 20px;
+  }
+  
+  .campo {
+    margin-bottom: 14px;
+  }
+  
+  .grid-formulario {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  .grid-formulario-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  /* =========================================================
+     CARDS / BLOCOS DO SISTEMA
+     ========================================================= */
+  
+  .card,
+  .bloco,
+  .secao {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  
+  .card h2,
+  .card h3,
+  .bloco h2,
+  .bloco h3,
+  .secao h2,
+  .secao h3 {
+    margin-top: 0;
+  }
+  
+  /* =========================================================
+     LISTAS
+     ========================================================= */
+  
+  ul {
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+  
+  li {
+    margin-bottom: 4px;
+  }
+  
+  /* =========================================================
+     ENCOMENDAS - SISTEMA
+     ========================================================= */
+  
+  .encomenda-cadastrada {
+    border: 1px solid #bbb;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #fafafa;
+  }
+  
+  .encomenda-cadastrada strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .encomenda-cadastrada p {
+    margin: 4px 0;
+  }
+  
+  .encomenda-cadastrada button {
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+  
+  /* =========================================================
+     MOVIMENTAÇÕES - SISTEMA
+     ========================================================= */
+  
+  .movimentacao-cadastrada {
+    border: 1px solid #bbb;
+    background: #fafafa;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .movimentacao-cadastrada p {
+    margin: 5px 0;
+  }
+  
+  .imagens-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 12px;
+  }
+  
+  .imagem-preview-form {
+    border: 1px solid #999;
+    padding: 5px;
+    background: #fff;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imagem-preview-form img {
+    display: block;
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+  }
+  
+  /* =========================================================
+     RELATÓRIO FINAL
+     ========================================================= */
+  
+  .relatorio {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    padding: 18mm 14mm 18mm 14mm;
+    background: #ffffff;
+    position: relative;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.25;
+  }
+  
+  /* =========================================================
+     PÁGINA DO RELATÓRIO
+     ========================================================= */
+  
+  .relatorio-pagina {
+    position: relative;
+    width: 100%;
+    min-height: 250mm;
+  }
+  
+  /* =========================================================
+     CABEÇALHO SEPA
+     ========================================================= */
+  
+  .cabecalho-relatorio {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 24px;
+  }
+  
+  .logo-sepa {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    margin-right: 12px;
+  }
+  
+  .cabecalho-texto {
+    text-align: center;
+    line-height: 1;
+  }
+  
+  .cabecalho-grupo {
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+  
+  .cabecalho-seguranca {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 4px;
+    letter-spacing: 0.2px;
+  }
+  
+  .cabecalho-slogan {
+    font-size: 13px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 4px;
+  }
+  
+  /* =========================================================
+     APRESENTAÇÃO
+     ========================================================= */
+  
+  .apresentacao {
+    text-align: center;
+    font-size: 12pt;
+    margin: 22px 0 18px;
+    line-height: 1.3;
+  }
+  
+  .titulo-relatorio {
+    text-align: center;
+    color: #d71920;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px 0 8px;
+    text-transform: uppercase;
+  }
+  
+  .endereco-relatorio {
+    text-align: center;
+    font-weight: bold;
+    margin: 0 0 20px;
+    line-height: 1.25;
+  }
+  
+  .texto-relatorio {
+    text-align: left;
+    margin: 8px 0;
+  }
+  
+  /* =========================================================
+     MARCA D'ÁGUA
+     ========================================================= */
+  
+  .pagina-inicial {
+    position: relative;
+  }
+  
+  .pagina-inicial::before {
+    content: "";
+    position: absolute;
+  
+    left: 50%;
+    top: 48%;
+  
+    width: 390px;
+    height: 390px;
+  
+    transform: translate(-50%, -50%);
+  
+    background-image: url("/logo-sepa-watermark.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .pagina-inicial > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* =========================================================
+     TÍTULOS DAS SEÇÕES
+     ========================================================= */
+  
+  .titulo-secao {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .titulo-secao-vermelho {
+    color: #d71920;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 20px 0 10px;
+  }
+  
+  /* =========================================================
+     MATERIAIS
+     ========================================================= */
+  
+  .materiais-relatorio {
+    margin-top: 8px;
+  }
+  
+  .material-categoria {
+    margin-top: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .material-categoria h3 {
+    font-size: 13px;
+    margin: 0 0 4px;
+    font-weight: bold;
+  }
+  
+  .material-categoria ul {
+    margin-top: 3px;
+    padding-left: 28px;
+  }
+  
+  .material-categoria li {
+    margin-bottom: 2px;
+  }
+  
+  /* =========================================================
+     ENCOMENDAS - RELATÓRIO FINAL
+     ========================================================= */
+  
+  .encomendas-final {
+    margin-top: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .encomendas-final h3 {
+    color: #d71920;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 18px 0 8px;
+  }
+  
+  /* tabela */
+  
+  .tabela-encomendas {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-bottom: 16px;
+    font-size: 11pt;
+  }
+  
+  .tabela-encomendas th,
+  .tabela-encomendas td {
+    border: 1px solid #222;
+    padding: 6px 7px;
+    vertical-align: middle;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  .tabela-encomendas th {
+    background: #00a82d;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .tabela-encomendas th:nth-child(1),
+  .tabela-encomendas td:nth-child(1) {
+    width: 34%;
+  }
+  
+  .tabela-encomendas th:nth-child(2),
+  .tabela-encomendas td:nth-child(2) {
+    width: 36%;
+  }
+  
+  .tabela-encomendas th:nth-child(3),
+  .tabela-encomendas td:nth-child(3) {
+    width: 30%;
+  }
+  
+  /* =========================================================
+     CONTROLE DE ACESSO
+     ========================================================= */
+  
+  .controle-acesso {
+    margin-top: 18px;
+  }
+  
+  .controle-acesso > h3 {
+    color: #d71920;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 18px 0 14px;
+  }
+  
+  .movimentacao-final {
+    margin: 20px 0 28px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  .frase-movimentacao {
+    margin: 0 0 12px;
+    line-height: 1.45;
+    text-align: left;
+  }
+  
+  /* =========================================================
+     IMAGENS DAS MOVIMENTAÇÕES
+     ========================================================= */
+  
+  .imagens-movimentacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    width: 100%;
+    align-items: start;
+  }
+  
+  .imagem-movimentacao {
+    width: 100%;
+    min-height: 130px;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  
+  .imagem-movimentacao img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  
+  .imagem-vazia {
+    width: 100%;
+    min-height: 130px;
+  }
+  
+  /* =========================================================
+     OBSERVAÇÕES
+     ========================================================= */
+  
+  .observacoes-final {
+    margin-top: 18px;
+  }
+  
+  .observacoes-final h3 {
+    color: #d71920;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .observacao-item {
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  /* =========================================================
+     RESUMO
+     ========================================================= */
+  
+  .resumo-final {
+    margin-top: 18px;
+  }
+  
+  .resumo-final h3 {
+    color: #d71920;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* =========================================================
+     PASSAGEM DE POSTO
+     ========================================================= */
+  
+  .passagem-posto {
+    margin-top: 22px;
+    line-height: 1.45;
+    text-align: left;
+  }
+  
+  /* =========================================================
+     RODAPÉ
+     ========================================================= */
+  
+  .rodape-relatorio {
+    width: 100%;
+    border-top: 1px solid #000;
+    margin-top: 22px;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1;
+  }
+  
+  .rodape-telefone {
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 12px;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .rodape-site {
+    color: #0000ee;
+    text-decoration: underline;
+  }
+  
+  /* =========================================================
+     CENTRAL DE EDIÇÃO
+     ========================================================= */
+  
+  .central-edicao {
+    margin-top: 20px;
+  }
+  
+  .central-edicao button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  
+  /* =========================================================
+     VISUALIZAÇÃO
+     ========================================================= */
+  
+  .preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #eeeeee;
+    padding: 20px 0;
+  }
+  
+  /* =========================================================
+     IMPRESSÃO
+     ========================================================= */
+  
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  
+  @media print {
+    html,
+    body {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+  
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  
+    .app {
+      padding: 0;
+      min-height: 0;
+    }
+  
+    .no-print,
+    button,
+    .menu,
+    .central-edicao,
+    .controles,
+    .acoes,
+    .preview-controles {
+      display: none !important;
+    }
+  
+    .preview {
+      display: block;
+      padding: 0;
+      margin: 0;
+      background: #ffffff;
+    }
+  
+    .relatorio {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0;
+      padding: 18mm 14mm 18mm 14mm;
+      box-shadow: none;
+    }
+  
+    .relatorio-pagina {
+      width: 100%;
+    }
+  
+    .movimentacao-final {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  
+    .tabela-encomendas {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  
+    .cabecalho-relatorio,
+    .rodape-relatorio {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  
+    .pagina-inicial::before {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+  
+  /* =========================================================
+     RESPONSIVIDADE
+     ========================================================= */
+  
+  @media screen and (max-width: 900px) {
+    .relatorio {
+      width: 100%;
+      min-height: auto;
+      margin: 0;
+    }
+  
+    .grid-formulario,
+    .grid-formulario-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media screen and (max-width: 650px) {
+    .app {
+      padding: 12px;
+    }
+  
+    .relatorio {
+      padding: 20px 15px;
+    }
+  
+    .cabecalho-relatorio {
+      align-items: center;
+    }
+  
+    .logo-sepa {
+      width: 42px;
+      height: 42px;
+    }
+  
+    .cabecalho-grupo {
+      font-size: 20px;
+    }
+  
+    .cabecalho-seguranca,
+    .cabecalho-slogan {
+      font-size: 10px;
+    }
+  
+    .imagens-movimentacao {
+      grid-template-columns: 1fr;
+    }
+  
+    .imagens-formulario {
+      grid-template-columns: 1fr;
+    }
+  }
